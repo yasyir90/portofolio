@@ -1,0 +1,337 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
+
+
+body{
+    transition: 1s;
+}
+
+.ContainerHeader{
+    padding-top:20px ;
+}
+
+.nameTitle{
+    color: #444;
+    font-family: 'Source Code Pro', monospace;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    padding: 8px;
+    /* animation: nameTitle 2s linear; */
+    animation-delay: 2s;
+}
+/* 
+@keyframes nameTitle {
+    0%{
+        width: 0;
+        opacity: 1;
+       }
+       50%{
+       }
+       100%{
+        opacity: 1;
+        width: 100%;
+       } 
+ }
+
+
+.nameTitle::before{
+    position: absolute;
+    content: ' ';
+    width:5px;
+    min-height: 100%;
+    border-bottom: 2px solid#5483e2;
+    border-left: 2px solid#5483e2;
+    bottom: 0;
+    left: 0;
+    animation: titleOpen0 1s linear,lightTitle 2s linear infinite ;
+    box-shadow: -2px 2px #e25454;   
+}
+
+@keyframes titleOpen0 {
+   0%{
+    min-height: 0;
+   }
+   50%{
+   }
+   100%{
+    min-height: 100%;
+   } 
+}
+
+@keyframes titleOpen1 {
+    0%{
+     width: 0;
+     opacity: 1;
+     min-height: 100%;
+    }
+    50%{
+        opacity: 1;
+        min-height: 100%;
+         width: 110%;
+    }
+    100%{
+        opacity: 1;
+    min-height: 100%;
+     width: 0;
+    } 
+ }
+
+
+.nameTitle::after{
+    position: absolute;
+    opacity: 0;
+    content: ' ';
+    background-color: #e2545433;
+    width: 0;
+    min-height: 100%;
+    border-bottom: 2px solid#5483e2;
+    border-left: 2px solid#5483e2;
+    bottom: 0;
+    left: 0;
+    animation: titleOpen1 2s linear   ;
+    animation-delay: 1s;
+    box-shadow: -2px 2px #e25454;   
+}
+
+
+
+ 
+ @keyframes lightTitle {
+    0%{
+        box-shadow: 1px -1px 2px 2px #3487ed;
+        color: #e25454;;
+       }
+       50%{
+       }
+       100%{
+        color: #3487ed;
+        box-shadow: 1px -1px 1px 1px #e25454;
+       } 
+ } */
+
+
+@keyframes typing1 {
+    0% {
+        width: 0;
+        opacity: 0;
+      }
+      50%{
+          width: 100%;
+      }
+      100% {
+        opacity: 1;
+        width: 0;
+      }
+  }
+
+.redText{
+    color: #5483e2;
+    overflow: hidden; /* Menghilangkan overflow teks */
+    border-right: 0.15em solid orange; /* Garis imitasi ketik */
+    white-space: nowrap; /* Mencegah pemisahan kata */
+    margin: 0 auto; /* Pusatkan teks secara horizontal */
+    animation:
+    typing1 2s steps(40, end) infinite,
+    blink-caret1 0.75s step-end infinite;
+}
+
+  @keyframes blink-caret1 {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange; /* Warna imitasi ketik */
+    }
+  }
+
+
+  @keyframes typing2 {
+    0% {
+      width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+.blueText{
+    color: #5483e2;
+    overflow: hidden; /* Menghilangkan overflow teks */
+    border-right: 0.15em solid orange; /* Garis imitasi ketik */
+    white-space: nowrap; /* Mencegah pemisahan kata */
+    margin: 0 auto; /* Pusatkan teks secara horizontal */
+    animation:
+    typing2 2s steps(40, end) infinite,
+    blink-caret2 0.75s step-end infinite;
+}
+
+@keyframes blink-caret2 {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange; /* Warna imitasi ketik */
+    }
+  }
+
+
+.containerCode{
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    transition: 1s;
+}
+.code{
+    font-weight: bold;
+    font-family: 'Source Code Pro', monospace;
+    transition: 1s;
+}
+
+.code2{
+    font-weight: bold;
+    font-family: 'Source Code Pro', monospace;
+    transition: 1s;
+}
+
+.code3{
+    font-weight: bold;
+    font-family: 'Source Code Pro', monospace;
+    transition: 1s;
+}
+
+.cBlue{
+    color: #0146d1;
+}
+.cYellow{
+    color: #fff828;
+}
+
+.cRed{
+    color: #e2545b;
+}
+
+.cPurple{
+    color: #b354e2;
+}
+
+.cWhite{
+    color:  #e3e3e3; ;
+}
+
+.judulHeader{
+    padding-bottom: 40px;
+}
+
+
+.judulHeader p {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+}
+
+.judulHeader p div:nth-child(1){
+    transition: 1s;
+}
+
+.judulHeader p div:nth-child(3){
+    transition: 1s;
+}
+
+.judulHeader p div:nth-child(4)
+{
+    transition: 1s;
+}
+
+.judulHeader p div:nth-child(5){
+    transition: 1s;
+}
+
+
+
+.judulHeader p div:nth-child(7){
+    transition: 1s;
+}
+
+.judulHeader p div:nth-child(8){
+   
+    transition: 1s;
+}
+
+
+
+.listHeader ul{
+    display: flex;
+    gap: 20px;
+    color: #555;
+}
+
+.listHeader ul li{
+    list-style: none;
+    transition: 0.1s ;
+    padding-bottom: 10px;
+}
+
+.listHeader ul li:hover{
+    border-bottom:4px solid #183F8C;
+}
+
+.gambarHeader{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gambarHeader img{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+}
+
+.gambarHeader::before{
+    position: absolute;
+    content: ' ';
+    width: 200px;
+    height: 200px;
+    /* transform: translateY(29px)translateX(6px); */
+    z-index: -2;
+    border-radius: 50%;
+    background: radial-gradient(#183F8C11,#183F8C99);
+    box-shadow: 0px 0px 3px 4px #183F8C99;
+    animation: gambarSaya 7s linear infinite;
+    animation-delay: -2s;
+}
+
+
+.gambarHeader::after{
+    position: absolute;
+    content: ' ';
+    width: 200px;
+    height: 200px;
+    /* transform: translateY(29px)translateX(6px); */
+    z-index: -2;
+    border-radius: 50%;
+    background: radial-gradient(#183F8C11,#183F8C99);
+    box-shadow: 0px 0px 3px 4px #183F8C99;
+    animation: gambarSaya 7s linear infinite;
+}
+
+@keyframes gambarSaya {
+    0%{
+        transform: translateY(29px)translateX(6px);
+    }
+    25%{
+        transform: translateY(35px)translateX(12px);
+    }
+    50%{
+        transform: translateY(20px)translateX(-6px);
+    }
+    75%{
+        transform: translateY(35px)translateX(-12px);
+    }
+    100%{
+        transform: translateY(29px)translateX(6px);
+    }
+}
