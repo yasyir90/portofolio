@@ -3,9 +3,14 @@ import {Container,Row,Col} from 'react-bootstrap'
 import  { useState, useEffect } from 'react'
 
 
+// import component
+import DarkMode from '../darkMode/dark'
 
 // image
-import me from '../../assets/saya bg-black.png'
+import me1 from '../../assets/saya bg-black.png'
+import me2 from '../../assets/saya bg-white.png'
+
+
 
 // style
 import './header.css'
@@ -16,11 +21,13 @@ const Header = ()=>{
  
     const [hellow,setHellow]=useState('');
     const [styles,setStyles]=useState('');
-    const [dark,setDark] = useState('light' );
+    const [meImg,setMeImg]=useState(me1);
 
     const hello = ['hello world',`i'm`,'Front-end','web','development']
 
-
+    const darkMode = localStorage.getItem('dark')
+    console.log(darkMode)
+ 
     if(hellow == ''){
         setHellow(hello[0]);
         setTimeout(()=>{
@@ -56,87 +63,16 @@ const Header = ()=>{
 
       }, [hellow]);
 
-      const containerCode = document.getElementsByClassName('containerCode');
-      const code = document.getElementsByClassName('code');
-      const code2 = document.getElementsByClassName('code2');
-      const code3 = document.getElementsByClassName('code3');
   
-
-   useEffect(()=>{
-    
-    if(dark === "light"){
-        for(let i= 0 ; i < containerCode.length; i++){
-            containerCode[i].classList.add('cBlue')
-            
-            
-        }
-    
-    
-        for(let i= 0 ; i < code.length; i++){
-            code[i].classList.add('cRed')
-        }
-
-        for(let i= 0 ; i < code2.length; i++){
-            code2[i].classList.add('cRed')
-        }
-        for(let i= 0 ; i < code3.length; i++){
-            code3[i].classList.add('cPurple')
-        }
-       
-    }
-   
-   })
-
-   const darkMode = () =>{
-    for(let i= 0 ; i < containerCode.length; i++){
-        containerCode[i].classList.remove('cBlue')
-        containerCode[i].classList.add('cWhite')
-        document.body.style.backgroundColor = '#111';
-        
-    }
-
-
-    for(let i= 0 ; i < code.length; i++){
-        code[i].classList.add('cRed')
-    }
-
-    for(let i= 0 ; i < code2.length; i++){
-        code2[i].classList.remove('cRed')
-        code2[i].classList.add('cYellow')
-    }
-    for(let i= 0 ; i < code3.length; i++){
-        code3[i].classList.remove('cPurple')
-        code3[i].classList.add('cRed')
-    }
-    setDark('dark')
-    console.log(dark)
-   }
-
-   const lightMode = () =>{
-    for(let i= 0 ; i < containerCode.length; i++){
-        containerCode[i].classList.remove('cWhite')
-        containerCode[i].classList.add('cBlue')
-        document.body.style.backgroundColor = 'white';
-        
-    }
-
-
-    for(let i= 0 ; i < code.length; i++){
-        code[i].classList.add('cRed')
-    }
-    setDark('light')
-    console.log(dark)
-   }
-
-   const mode = ()=>{
-    if(dark === 'light'){
-      darkMode();
-    }
-    
-    if(dark === 'dark'){
-      lightMode();
-    }
-}
+ useEffect(()=>{
+    if(darkMode === 'light'){
+        setMeImg(me2)
+       }
+       if(darkMode === 'dark'){
+        setMeImg(me1)
+       }
+      
+ })
   
    const buka = `<`
    const tutup = `>`
@@ -215,15 +151,16 @@ const Header = ()=>{
                                 <div className='containerCode' style={{margin:'0'}}>{tutup}</div>
                             </div>
 
-                            <div onClick={mode} >dark</div>
+                            <DarkMode/>
+
                         </ul>
                     </div>
                 </Col>
 
                
             </Row>
-            <div className='gambarHeader'>
-                <img src={me} alt="" />
+            <div className='gambarHeader '>
+                <img src={meImg} alt="" />
             </div>
             <Row>
                 <Col>
